@@ -1,0 +1,25 @@
+
+#TodosSorting {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+#TodosSorting button {
+    border: none;
+    background: none;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    padding: 3px;
+    cursor: pointer;
+    font-family: Bahnschrift;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#TodosSorting button:hover {
+    color: #ff8000;
+}

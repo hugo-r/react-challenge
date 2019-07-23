@@ -1,0 +1,95 @@
+
+.Todo {
+    width: 100vw;
+    height: 60px;
+    border-bottom: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.Todo:nth-child(even) {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.Todo form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    width: 100vw;
+}
+
+.Todo form input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+    -moz-appearance: none;
+    border: 2px solid #666;
+    background-color: white;
+    margin: 0 20px;
+}
+
+.Todo form input[type="checkbox"]:hover {
+    cursor: pointer;     
+}
+
+.Todo form input[type='checkbox']:active {
+    background-color: #ddd;
+ }
+
+.Todo form input[type='checkbox']:checked {
+    background-image: url('../resources/images/checkbox-tick.png');
+    background-size: contain;
+}
+
+.Todo form input[type='text'] {
+    width: 80vw;
+    font-family: Bahnschrift;
+    font-size: 24px;
+    color: #ff8000;
+    background: none;
+    border: none;
+    cursor: default
+}
+
+.Todo form div {
+    width: 175px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Todo form button {
+    width: 80px;
+    font-family: Bahnschrift;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: white;
+    margin: 0;
+}
+
+.Todo form button:hover {
+    color:#ff8000;
+    cursor: pointer;
+}
+
+.Todo form button:disabled,
+.Todo form button[disabled] {
+    color: #666;
+    cursor: default;
+}
+
+.Todo form input[type='text'].enabledEdit {
+    cursor: text;
+    border-bottom: 1px dashed white;
+}
+
+.Todo form span {
+    color: white;
+}
