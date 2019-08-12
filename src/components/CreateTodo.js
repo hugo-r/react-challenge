@@ -23,13 +23,12 @@ class CreateTodo extends React.Component<Props> {
 
     constructor(props: Props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
         this.placeholder = 'Write new task here...';
         this.inputRef = React.createRef();
         this.lastId = 0;
     }
 
-    handleClick(event: SyntheticMouseEvent<HTMLButtonElement>) {
+    handleClick = (event: SyntheticMouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         this.updateLastId();
         this.props.addTodo(this.lastId, this.inputRef.current.value.trim());

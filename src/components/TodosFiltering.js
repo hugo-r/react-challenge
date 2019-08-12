@@ -18,12 +18,7 @@ type Props = {
  */
 class TodosFiltering extends React.Component<Props> {
 
-    constructor(props) {
-        super(props);
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-    }
-
-    handleCheckboxChange(event: SyntheticMouseEvent<HTMLInputElement>) {
+    handleCheckboxChange = (event: SyntheticMouseEvent<HTMLInputElement>) => {
         this.props.toggleVisibilityFilter();
     }
 

@@ -19,7 +19,6 @@ class TodosSorting extends React.Component<Props> {
 
     constructor(props: Props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
         this.state = {
             sortingOrder: [
                 sortingOrder.DATE_ASC,
@@ -29,7 +28,7 @@ class TodosSorting extends React.Component<Props> {
         };
     }
 
-    handleClick(event: SyntheticMouseEvent<HTMLButtonElement>) {
+    handleClick = (event: SyntheticMouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         this.props.sortBy(this.nextSortingOrder());
     }

@@ -25,35 +25,29 @@ class Todo extends React.Component<Props> {
     inputRef: any;
     editButtonRef: any;
     state: {
-        isEditingText: string
+        isEditingText: boolean
     }
 
     constructor(props: Props) {
         super(props);
-        this.handleClickEdit = this.handleClickEdit.bind(this);
-        this.handleClickDelete = this.handleClickDelete.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.formRef = React.createRef();
         this.inputRef = React.createRef();
         this.editButtonRef = React.createRef();
-        this.toggleClass = this.toggleClass.bind(this);
         this.state = {
             isEditingText: false
         }
     }
 
-    handleClickDelete(event: SyntheticMouseEvent<HTMLButtonElement>) {
+    handleClickDelete = (event: SyntheticMouseEvent<HTMLButtonElement>) => {
         this.props.deleteTodo(this.props.id);
     }
 
-    handleClickEdit(event: SyntheticMouseEvent<HTMLButtonElement>) {
+    handleClickEdit = (event: SyntheticMouseEvent<HTMLButtonElement>) => {
         this.enableEditing();
         this.inputRef.current.focus();
     }
 
-    handleKeyDown(event: SyntheticKeyboardEvent<HTMLInputElement>) {
+    handleKeyDown = (event: SyntheticKeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             event.preventDefault();
             this.formRef.current.reportValidity();
@@ -65,14 +59,14 @@ class Todo extends React.Component<Props> {
         }
     }
 
-    handleBlur(event: SyntheticEvent<>) {
+    handleBlur = (event: SyntheticEvent<>) => {
         if (this.inputRef.current.readOnly === false) {
             this.inputRef.current.value = this.props.text;
             this.disableEditing();
         }
     }
 
-    handleCheckboxChange(event: SyntheticMouseEvent<HTMLInputElement>) {
+    handleCheckboxChange = (event: SyntheticMouseEvent<HTMLInputElement>) => {
         this.props.toggleTodo(this.props.id);
     }
 
